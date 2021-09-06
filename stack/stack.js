@@ -28,6 +28,17 @@ class MyStack{
 		this.length ++;
 		return this;
 	}
+	pop(){
+		const removedNode = this.top
+		if(this.length < 1){
+			this.top = null;
+			this.bottom = null;
+		}else{
+			this.top = this.top.next;
+		}
+		this.length --;
+		return removedNode;
+	}
 }
 
 const myStack = new MyStack();
@@ -35,3 +46,4 @@ myStack.push(1);
 myStack.push(2);
 myStack.push(3);
 myStack.push(4);
+myStack.pop()
